@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #111111;
+  color: #eeeef2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(66, 29, 126, .20), transparent 34rem),
+    #111111;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(215, 255, 0, .22);
+}
+
+.dvms-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.dvms-scroll::-webkit-scrollbar-thumb {
+  background: #34343c;
+  border-radius: 99px;
+}
+
+.dvms-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .dvms-card {
+    @apply rounded-lg border border-dvms-border bg-dvms-panel;
+  }
+
+  .dvms-input {
+    @apply w-full rounded-md border border-dvms-border bg-[#151518] px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#676675] transition focus:border-dvms-purple focus:ring-1 focus:ring-dvms-purple/50;
+  }
+
+  .dvms-label {
+    @apply mb-1.5 block text-[11px] font-medium text-[#c7c4d2];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-dvms-purple px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#6a34ff] active:scale-[.99];
+  }
+
+  .btn-lime {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-dvms-lime px-4 py-2.5 text-xs font-bold text-[#161616] transition hover:brightness-105 active:scale-[.99];
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-dvms-border bg-[#19191c] px-4 py-2.5 text-xs text-[#dedbe5] transition hover:bg-[#222226];
+  }
+
+  .mono {
+    @apply font-mono text-[10px] tracking-tight;
+  }
+
+  .docx-preview {
+    color: #111;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .docx-preview h1,
+  .docx-preview h2,
+  .docx-preview h3,
+  .docx-preview h4 {
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    font-weight: 700;
+  }
+
+  .docx-preview p {
+    margin: 0.6em 0;
+  }
+
+  .docx-preview table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+  }
+
+  .docx-preview td,
+  .docx-preview th {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    vertical-align: top;
+  }
+
+  .docx-preview img {
+    max-width: 100%;
+    height: auto;
+  }
+
+}
